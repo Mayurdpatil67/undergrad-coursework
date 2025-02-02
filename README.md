@@ -1,70 +1,89 @@
-# Bank Management System
+# Online Banking System
 
-This is a **Bank Management System** built in Java. It allows users to manage bank accounts, perform transactions, and view account details. The system is designed to simulate typical banking operations such as account creation, withdrawal, deposit, and balance checking. It serves as a demonstration of object-oriented programming concepts and Java GUI development.
+## Introduction
+The **Online Banking System** is a Java-based web application designed to provide users with a secure and convenient platform for online banking transactions. It includes features for account management, fund transfers, transaction history, and security measures to protect user information.
 
-## Features
-
-- **Account Creation**: Allows customers to create new accounts by providing basic details like name, address, phone number, and initial deposit.
-- **Deposit Money**: Users can deposit money into their accounts, updating the balance accordingly.
-- **Withdraw Money**: Allows users to withdraw money from their accounts, ensuring that there is sufficient balance.
-- **Account Information**: Users can view their account details such as balance, transaction history, and personal information.
-- **Transaction History**: Keeps track of all deposits and withdrawals made in the account.
-- **Admin Panel**: Admin users can manage multiple customer accounts and perform administrative tasks like viewing all accounts, deleting accounts, or making updates to account details.
+## Objectives
+- Develop a web-based application for online banking using Java.
+- Implement secure user authentication and authorization.
+- Provide functionalities for account management, fund transfers, and transaction history.
+- Utilize MySQL for database storage and management.
+- Implement encryption and other security measures to protect sensitive user data.
 
 ## Technologies Used
+- **Java** (Programming language)
+- **MySQL** (Relational database)
+- **JavaServer Pages (JSP)** for frontend
+- **Servlets** for backend
+- **HTML, CSS, JavaScript** (Frontend)
+- **JDBC** (Java Database Connectivity) for database interaction
 
-- **Java**: The core programming language used for the development of the application.
-- **Swing**: A GUI toolkit used for building the graphical interface of the system.
-- **JDBC (Java Database Connectivity)**: Used for connecting to a database to persist user data and transaction history.
-- **MySQL**: A relational database used to store customer information, transaction history, and account data.
+## Features
+### User Authentication
+- Secure login and registration functionalities.
+- Password encryption for enhanced security.
 
-## Prerequisites
+### Account Management
+- View account details, including balance and transaction history.
+- Update account information.
 
-To run this project on your local machine, you will need the following:
+### Fund Transfers
+- Transfer funds between accounts.
+- Display transaction receipts and updates on account balances.
 
-- **Java** (JDK 8 or higher)
-- **MySQL** (for database management)
-- **JDBC driver** (for database connection)
+### Transaction History
+- Maintain a detailed transaction history for each account.
+- Display transaction details, including date, type (deposit, withdrawal, transfer), and amount.
 
-## Installation
+### Security Measures
+- Secure practices such as password hashing, HTTPS, and session management.
 
-### Clone the Repository
-
-```bash
-git clone https://github.com/Mayurdpatil67/academics-ug.git
-cd bank-management-system
+## Project Structure
+```
+com.bank.controller  # Contains servlets for handling user requests
+com.bank.model       # JavaBeans representing entities like User, Account, and Transaction
+com.bank.dao         # Data Access Objects for database interactions
+com.bank.util        # Utility classes for encryption and other functionalities
 ```
 
-### Set Up MySQL Database
+## User Interface Design
+### Web Pages
+- **Login and Registration Forms**
+- **Account Dashboard** displaying balance, transaction history, and fund transfer options.
 
-1. Create a database called `bank_management` and import the SQL schema for creating tables such as accounts, transactions, and users.
-2. A sample SQL file (`db_setup.sql`) is included in the repository.
+## Database Design
+### Schema
+#### Users Table
+```
+user_id (Primary Key)
+username
+password_hash
+email
+```
+#### Accounts Table
+```
+account_id (Primary Key)
+user_id (Foreign Key)
+balance
+```
+#### Transactions Table
+```
+transaction_id (Primary Key)
+account_id (Foreign Key)
+type
+amount
+date
+```
 
-### Configure Database Connection
+## Conclusion
+This project provides a secure and efficient online banking system with essential functionalities for users. It showcases secure authentication, financial transactions, and database interactions using Java and MySQL.
 
-Edit the `DatabaseConnection.java` file to configure your MySQL connection parameters (e.g., username, password, and database name).
-
-### Run the Application
-
-1. Open the project in your preferred IDE (such as IntelliJ IDEA, Eclipse, or NetBeans).
-2. Compile and run the `BankManagementSystem.java` file.
-
-## Example Usage
-
-Once the application is running, you will be presented with a login screen. You can choose to log in as an **Admin** or **Customer**.
-
-### Admin Panel
-
-As an admin, you can:
-
-- Add or delete accounts.
-- View all accounts in the bank.
-- Manage customer transactions.
-
-### Customer Panel
-
-As a customer, you can:
-
-- Create a new account.
-- Deposit or withdraw money.
-- View account details and transaction history.
+## Installation and Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/online-banking-system.git
+   ```
+2. Import the project into your preferred IDE.
+3. Configure the **MySQL database** and update connection details in the DAO classes.
+4. Deploy the application on a Tomcat server.
+5. Access the application via `http://localhost:8080/OnlineBankingSystem`.
