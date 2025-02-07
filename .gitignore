@@ -1,0 +1,8 @@
+# Ignore compiled output files
+lib/
+out/
+
+# Ignore IntelliJ IDEA project files
+*.iml
+.idea/
+
