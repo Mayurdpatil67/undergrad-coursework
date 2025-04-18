@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /*
     JDBC class is used to interact with our MySQL Database to perform activities such as retrieving and updating our db
  */
-public class MyJDBC {
+public class MyJDBC{
     // database configurations
     private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/bankapp";
     private static final String DB_USERNAME = "root";
