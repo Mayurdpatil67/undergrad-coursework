@@ -6,7 +6,7 @@ import guis.RegisterGui;
 import javax.swing.*;
 import java.math.BigDecimal;
 
-public class AppLauncher {
+public class AppLauncher{
     public static void main(String[] args) {
         // use invokeLater to make updates to the GUI more thread-safe
         SwingUtilities.invokeLater(new Runnable(){
