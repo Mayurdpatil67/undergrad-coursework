@@ -6,7 +6,7 @@ import java.math.RoundingMode;
 /*
     User entity which is used to store user information (i.e. id, username, password, and current balance)
  */
-public class User {
+public class User{
     private final int id;
     private final String username, password;
     private BigDecimal currentBalance;
