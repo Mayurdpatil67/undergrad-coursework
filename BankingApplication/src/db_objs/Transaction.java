@@ -6,7 +6,7 @@ import java.sql.Date;
 /*
     Transaction entity used to store transaction data
  */
-public class Transaction {
+public class Transaction{
     private final int userId;
     private final String transactionType;
     private final BigDecimal transactionAmount;
