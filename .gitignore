@@ -5,4 +5,4 @@ out/
 # Ignore IntelliJ IDEA project files
 *.iml
 .idea/
-
+.application.peoperties
